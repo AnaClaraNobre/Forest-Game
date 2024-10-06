@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b280sliciqr0a"]
+
+[ext_resource type="Texture2D" uid="uid://cyxeh5fw4bp3q" path="res://trash assets/garbage bag 2.png" id="1_43l7e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pp0h0"]
+radius = 7.0
+height = 14.0
+
+[node name="garb2" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.25, 1.75)
+scale = Vector2(0.763158, 0.766667)
+texture = ExtResource("1_43l7e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 1)
+shape = SubResource("CapsuleShape2D_pp0h0")

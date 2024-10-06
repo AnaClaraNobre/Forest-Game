@@ -1,0 +1,123 @@
+[gd_scene load_steps=11 format=3 uid="uid://2ctg4mvqb0ho"]
+
+[ext_resource type="Texture2D" uid="uid://dhuurnuat038j" path="res://bg_imgs/PNG/summer6/1.png" id="1_r5fwe"]
+[ext_resource type="Shader" path="res://shaders/moviment_Clunds.gdshader" id="2_k4bcb"]
+[ext_resource type="Texture2D" uid="uid://dfvuco1triuws" path="res://bg_imgs/PNG/summer 2/4.png" id="3_4yx2x"]
+[ext_resource type="Texture2D" uid="uid://djh1d0wpgj7wp" path="res://bg_imgs/PNG/summer7/4.png" id="4_a107c"]
+[ext_resource type="Texture2D" uid="uid://dm3w4jkqlg4y1" path="res://bg_imgs/PNG/summer 4/3.png" id="5_05ufr"]
+[ext_resource type="Texture2D" uid="uid://dowy768gpthc2" path="res://bg_imgs/PNG/summer6/5.png" id="6_uyhcm"]
+[ext_resource type="Script" path="res://start_btn.gd" id="7_mnclw"]
+[ext_resource type="Texture2D" uid="uid://b47grxsqavmu8" path="res://Pixel UI pack 2/Ram Buttons (1).png" id="8_stcma"]
+[ext_resource type="Script" path="res://options.gd" id="9_ceb3r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k3qwu"]
+shader = ExtResource("2_k4bcb")
+shader_parameter/move_speed = 0.04
+
+[node name="InitPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ParallaxBackground" parent="."]
+
+[node name="5" type="ParallaxLayer" parent="BG"]
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/5"]
+scale = Vector2(1.19097, 1.15123)
+texture = ExtResource("1_r5fwe")
+centered = false
+
+[node name="4" type="ParallaxLayer" parent="BG"]
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/4"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_k3qwu")
+position = Vector2(-1, 0)
+scale = Vector2(1.18924, 1.14815)
+texture = ExtResource("3_4yx2x")
+centered = false
+
+[node name="3" type="ParallaxLayer" parent="BG"]
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/3"]
+texture = ExtResource("4_a107c")
+centered = false
+
+[node name="2" type="ParallaxLayer" parent="BG"]
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/2"]
+scale = Vector2(1.18924, 1.15123)
+texture = ExtResource("5_05ufr")
+centered = false
+
+[node name="1" type="ParallaxLayer" parent="BG"]
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/1"]
+scale = Vector2(1.19097, 1.15432)
+texture = ExtResource("6_uyhcm")
+centered = false
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 191.0
+offset_right = 370.0
+offset_bottom = 214.0
+script = ExtResource("7_mnclw")
+
+[node name="btn_start" type="Sprite2D" parent="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/start_btn"]
+position = Vector2(39, 10)
+scale = Vector2(1.36914, 0.951613)
+texture = ExtResource("8_stcma")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/start_btn"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -5.0
+offset_right = 64.0
+offset_bottom = 18.0
+text = "START"
+
+[node name="options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 234.0
+offset_right = 367.0
+offset_bottom = 257.0
+script = ExtResource("9_ceb3r")
+
+[node name="options" type="Sprite2D" parent="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/options"]
+position = Vector2(39.3125, 12)
+scale = Vector2(1.36523, 0.951613)
+texture = ExtResource("8_stcma")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/options"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -3.0
+offset_right = 75.0
+offset_bottom = 20.0
+text = "OPTIONS"
+
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/start_btn" to="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/start_btn" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/start_btn" to="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/start_btn" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/options" to="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/options" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/options" to="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/options" method="_on_mouse_exited"]
