@@ -27,7 +27,7 @@ grow_vertical = 2
 [node name="5" type="ParallaxLayer" parent="BG"]
 
 [node name="Sprite2D" type="Sprite2D" parent="BG/5"]
-scale = Vector2(1.19097, 1.15123)
+scale = Vector2(2.22049, 2.36111)
 texture = ExtResource("1_r5fwe")
 centered = false
 
@@ -37,27 +37,28 @@ centered = false
 texture_repeat = 2
 material = SubResource("ShaderMaterial_k3qwu")
 position = Vector2(-1, 0)
-scale = Vector2(1.18924, 1.14815)
+scale = Vector2(2.22049, 2.34259)
 texture = ExtResource("3_4yx2x")
 centered = false
 
 [node name="3" type="ParallaxLayer" parent="BG"]
 
 [node name="Sprite2D" type="Sprite2D" parent="BG/3"]
+scale = Vector2(2.21701, 2.35494)
 texture = ExtResource("4_a107c")
 centered = false
 
 [node name="2" type="ParallaxLayer" parent="BG"]
 
 [node name="Sprite2D" type="Sprite2D" parent="BG/2"]
-scale = Vector2(1.18924, 1.15123)
+scale = Vector2(2.21701, 2.35185)
 texture = ExtResource("5_05ufr")
 centered = false
 
 [node name="1" type="ParallaxLayer" parent="BG"]
 
 [node name="Sprite2D" type="Sprite2D" parent="BG/1"]
-scale = Vector2(1.19097, 1.15432)
+scale = Vector2(2.22049, 2.34259)
 texture = ExtResource("6_uyhcm")
 centered = false
 
@@ -77,10 +78,10 @@ layout_mode = 2
 
 [node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/TextureRect"]
 layout_mode = 0
-offset_left = 292.0
-offset_top = 191.0
-offset_right = 370.0
-offset_bottom = 214.0
+offset_left = 620.0
+offset_top = 351.0
+offset_right = 698.0
+offset_bottom = 374.0
 script = ExtResource("7_mnclw")
 
 [node name="btn_start" type="Sprite2D" parent="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/start_btn"]
@@ -98,10 +99,10 @@ text = "START"
 
 [node name="options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/TextureRect"]
 layout_mode = 0
-offset_left = 293.0
-offset_top = 234.0
-offset_right = 367.0
-offset_bottom = 257.0
+offset_left = 621.0
+offset_top = 394.0
+offset_right = 695.0
+offset_bottom = 417.0
 script = ExtResource("9_ceb3r")
 
 [node name="options" type="Sprite2D" parent="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/options"]
@@ -119,5 +120,6 @@ text = "OPTIONS"
 
 [connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/start_btn" to="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/start_btn" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/start_btn" to="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/start_btn" method="_on_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/start_btn" to="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/start_btn" method="_on_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/options" to="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/options" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/options" to="MarginContainer/HBoxContainer/VBoxContainer/TextureRect/options" method="_on_mouse_exited"]

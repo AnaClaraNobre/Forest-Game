@@ -6,6 +6,7 @@ class_name Mia
 @export_category("Objects")
 @onready var animation := $anim as AnimatedSprite2D
 @export var sprit2d = AnimatedSprite2D
+var hasGarb: bool = false
 
 var _can_pick: bool = true
 var _pick_Up_animation_name: String = ""
@@ -29,13 +30,13 @@ func _move() -> void:
 func _pick() -> void: 
 	if Input.is_action_just_pressed("pick_up") and _can_pick:
 		_can_pick = false
-		_pick_Up_animation_name = pick_up_name
-		
+		_pick_Up_animation_name = pick_up_name		
 	
 	if Input.is_action_just_released("pick_up"):
 		_can_pick = true
 		set_physics_process(true)
 		animation.play("side_idle")
+		
 func _animate() -> void:
 	
 	if velocity.x > 0 and velocity.y == 0:
@@ -63,3 +64,9 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == _pick_Up_animation_name:
 		_can_pick = true
 		set_physics_process(true)
+		
+func _input(event):
+	if event.is_action_pressed("pick_up"):			
+		hasGarb = true		
+	if event.is_action_released("pick_up"):		
+		hasGarb = false			
