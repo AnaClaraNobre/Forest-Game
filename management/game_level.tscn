@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bll8uybjg6f0l"]
+[gd_scene load_steps=15 format=4 uid="uid://bll8uybjg6f0l"]
 
 [ext_resource type="PackedScene" uid="uid://bis71orh2v06e" path="res://terrain/first_level.tscn" id="1_2nllj"]
 [ext_resource type="Script" path="res://management/game_level.gd" id="1_bxc2x"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bc5e2kvcxn5dg" path="res://trashs/area_2d.tscn" id="5_y1ieh"]
 [ext_resource type="PackedScene" uid="uid://b280sliciqr0a" path="res://trashs/garb_2.tscn" id="6_bmjyr"]
 [ext_resource type="PackedScene" uid="uid://bfc4y8x3dhd42" path="res://animals/cat.tscn" id="8_mgo3d"]
+[ext_resource type="AudioStream" uid="uid://ffxsgvdm0504" path="res://sounds/bg_music.wav.ogg" id="9_p2wtb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jns80"]
 texture = ExtResource("4_o5pnn")
@@ -930,15 +931,19 @@ position = Vector2(116, 344)
 
 [node name="garb2" parent="first_level/garb" instance=ExtResource("6_bmjyr")]
 position = Vector2(507, 127)
+script = null
 
 [node name="garb3" parent="first_level/garb" instance=ExtResource("6_bmjyr")]
 position = Vector2(639, 105)
+script = null
 
 [node name="garb4" parent="first_level/garb" instance=ExtResource("6_bmjyr")]
 position = Vector2(19, 285)
+script = null
 
 [node name="garb5" parent="first_level/garb" instance=ExtResource("6_bmjyr")]
 position = Vector2(574, 454)
+script = null
 
 [node name="Mia" parent="first_level" instance=ExtResource("2_oogwc")]
 position = Vector2(66, -125)
@@ -961,3 +966,9 @@ offset_bottom = 21.0
 theme_override_font_sizes/font_size = 15
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_p2wtb")
+autoplay = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]

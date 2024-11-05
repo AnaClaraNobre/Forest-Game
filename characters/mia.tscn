@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cjuds1gkdkqm7"]
+[gd_scene load_steps=51 format=3 uid="uid://cjuds1gkdkqm7"]
 
 [ext_resource type="Script" path="res://mia.gd" id="1_m0vt1"]
 [ext_resource type="Texture2D" uid="uid://cr4xs20eh243t" path="res://characters/RPGMCharacter_v1.0/_down walk.png" id="2_0i70n"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://hnnmjwly30b6" path="res://characters/RPGMCharacter_v1.0/_side idle.png" id="2_rnupu"]
 [ext_resource type="Texture2D" uid="uid://bqqaytx5e7mhr" path="res://characters/RPGMCharacter_v1.0/_side walk.png" id="6_aox5p"]
 [ext_resource type="Texture2D" uid="uid://ddsa806heqhcu" path="res://characters/RPGMCharacter_v1.0/_up walk.png" id="8_5pyt8"]
+[ext_resource type="AudioStream" uid="uid://le87f52xfxr6" path="res://sounds/pick_up_music.wav" id="9_eeny8"]
+[ext_resource type="Texture2D" uid="uid://b513pyauh3dn7" path="res://shaders/light.jpg" id="10_re2cp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1y1c6"]
 atlas = ExtResource("2_5ko2i")
@@ -334,5 +336,11 @@ shape = SubResource("CapsuleShape2D_gprle")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="pick_up_effect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_eeny8")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = ExtResource("10_re2cp")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

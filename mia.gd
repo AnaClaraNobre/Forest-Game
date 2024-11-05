@@ -1,17 +1,11 @@
 extends CharacterBody2D
 class_name Mia
 
-
 @export_category("Variables")
 @export var move_speed: float = 128.0
 @export var garbage_count: int = 0  # Quantidade de lixo coletado
 @export var speed_reduction_per_garbage: float = 10.0  # Redução de velocidade por lixo coletado
-@onready var hud = get_node("../../UI/HUD")
-@export var score := 0:
-			set(value):
-				score = value
-				hud.score = score
-					
+@onready var pick_up_effect = $pick_up_effect as AudioStreamPlayer
 
 # Armazena a velocidade original para restaurá-la depois
 var original_move_speed: float = move_speed
@@ -24,13 +18,6 @@ var hasGarb: bool = false
 var _can_pick: bool = true
 var _pick_Up_animation_name: String = ""
 @export var pick_up_name: String = ""
-
-func _ready() -> void:
-	score = 0
-	if hud == null:
-		print("HUD não encontrado! Verifique o caminho.")
-	else:
-		print("HUD encontrado: ", hud)
 
 func _process(delta: float) -> void:
 	pass
@@ -57,9 +44,11 @@ func _pick() -> void:
 		_can_pick = true
 		set_physics_process(true)
 		animation.play("side_idle")
+		pick_up_effect.play()
+		garbage_count += 1
+		move_speed = max(0, move_speed - speed_reduction_per_garbage)
 		
 func _clearGarbage() -> void:
-	score += garbage_count
 	garbage_count = 0
 	move_speed = original_move_speed
 		
@@ -91,7 +80,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		set_physics_process(true)
 		
 func _input(event):
-	if event.is_action_pressed("pick_up"):        
+	if event.is_action_pressed("pick_up"):            
 		hasGarb = true        
 	if event.is_action_released("pick_up"):        
 		hasGarb = false            
