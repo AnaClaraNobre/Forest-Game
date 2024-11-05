@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://bll8uybjg6f0l"]
+[gd_scene load_steps=14 format=4 uid="uid://bll8uybjg6f0l"]
 
 [ext_resource type="PackedScene" uid="uid://bis71orh2v06e" path="res://terrain/first_level.tscn" id="1_2nllj"]
 [ext_resource type="Script" path="res://management/game_level.gd" id="1_bxc2x"]
 [ext_resource type="PackedScene" uid="uid://cjuds1gkdkqm7" path="res://characters/mia.tscn" id="2_oogwc"]
+[ext_resource type="PackedScene" uid="uid://bm7sjhb6iqdg0" path="res://terrain/hud.tscn" id="2_w88ki"]
+[ext_resource type="Script" path="res://score.gd" id="3_nwe4l"]
 [ext_resource type="Texture2D" uid="uid://ilq6cw2vhsqx" path="res://terrain/PixiVan Forest (Beta)/Trees.png" id="4_o5pnn"]
 [ext_resource type="Texture2D" uid="uid://btd2wrktfcjx5" path="res://terrain/Forest BETA V3/Trees.png" id="4_v0nvp"]
 [ext_resource type="PackedScene" uid="uid://bc5e2kvcxn5dg" path="res://trashs/area_2d.tscn" id="5_y1ieh"]
@@ -903,6 +905,11 @@ sources/6 = SubResource("TileSetAtlasSource_xe4wp")
 script = ExtResource("1_bxc2x")
 redclr = Color(0.605674, 1.31156e-06, 2.88785e-07, 1)
 origClr = Color(0.843137, 0.6, 0.117647, 1)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UI" instance=ExtResource("2_w88ki")]
+script = ExtResource("3_nwe4l")
 
 [node name="first_level" parent="." instance=ExtResource("1_2nllj")]
 

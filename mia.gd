@@ -1,11 +1,18 @@
 extends CharacterBody2D
 class_name Mia
 
+
 @export_category("Variables")
 @export var move_speed: float = 128.0
 @export var garbage_count: int = 0  # Quantidade de lixo coletado
 @export var speed_reduction_per_garbage: float = 10.0  # Redução de velocidade por lixo coletado
-@export var score = 0;
+@onready var hud = get_node("../../UI/HUD")
+@export var score := 0:
+			set(value):
+				score = value
+				hud.score = score
+					
+
 # Armazena a velocidade original para restaurá-la depois
 var original_move_speed: float = move_speed
 
@@ -17,6 +24,13 @@ var hasGarb: bool = false
 var _can_pick: bool = true
 var _pick_Up_animation_name: String = ""
 @export var pick_up_name: String = ""
+
+func _ready() -> void:
+	score = 0
+	if hud == null:
+		print("HUD não encontrado! Verifique o caminho.")
+	else:
+		print("HUD encontrado: ", hud)
 
 func _process(delta: float) -> void:
 	pass
@@ -48,8 +62,6 @@ func _clearGarbage() -> void:
 	score += garbage_count
 	garbage_count = 0
 	move_speed = original_move_speed
-	
-	print(score)
 		
 func _animate() -> void:
 	if velocity.x > 0 and velocity.y == 0:
