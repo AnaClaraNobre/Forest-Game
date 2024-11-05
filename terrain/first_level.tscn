@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://bis71orh2v06e"]
+[gd_scene load_steps=38 format=4 uid="uid://bis71orh2v06e"]
 
 [ext_resource type="Texture2D" uid="uid://bbyyehgyomodw" path="res://terrain/PixiVan Forest (Beta)/Ground Tileset.png" id="1_efxc3"]
 [ext_resource type="Texture2D" uid="uid://bosep6y8ntttp" path="res://terrain/PixiVan Forest (Beta)/Water Tileset.png" id="2_rsj7t"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://br8ns3isrvtrq" path="res://terrain/Forest BETA V3/PixiVan Forest (Beta)/Animated/Ambience/Water Ambience.png" id="11_tmc4f"]
 [ext_resource type="Texture2D" uid="uid://doc2ker4lfjqm" path="res://terrain/Forest BETA V3/PixiVan Forest (Beta)/Animated/Effects/Bush Fx.png" id="12_vmvaa"]
 [ext_resource type="Texture2D" uid="uid://b3r5k4xfc5ptv" path="res://terrain/Forest BETA V3/PixiVan Forest (Beta)/Animated/Ambience/Animated Grass.png" id="13_puvg4"]
+[ext_resource type="Texture2D" uid="uid://bn6af735cmohj" path="res://tent/Tent.png" id="15_02khv"]
+[ext_resource type="Script" path="res://terrain/barraca.gd" id="15_dnus7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vk5u5"]
 resource_name = "ground"
@@ -2964,6 +2966,9 @@ sources/3 = SubResource("TileSetAtlasSource_qxa1k")
 sources/4 = SubResource("TileSetAtlasSource_nftnb")
 sources/5 = SubResource("TileSetAtlasSource_ochvh")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5b1ci"]
+size = Vector2(34, 26)
+
 [node name="first_level" type="Node2D"]
 position = Vector2(273, 208)
 
@@ -2986,3 +2991,14 @@ tile_set = SubResource("TileSet_5lurh")
 [node name="effects" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAWAA0AAwAAAAIAAAAZAA8AAwAAAAIAAAAfAAwAAwAAAAIAAAAkAA0AAwAAAAIAAAAWAA8AAwAAAAIAAAAbAAwAAwAAAAIAAAAiAAsAAwAAAAIAAAAeAA8AAwAAAAIAAAAYAAsAAwAAAAIAAAAOAPv/BAAAAAAAAAD+//X/BAAAAAAAAADz//b/BAAAAAAAAAD+/wEABAAAAAAAAAAWAPb/BAAAAAAAAAAaAP//BAAAAAAAAAAOAAkABAAAAAAAAAD3/wAABAAAAAAAAAD0////BAAAAAAAAAARAPv/BAAAAAAAAAAMAPr/BAAAAAAAAAAXAAAABAAAAAAAAAD1/wcABAAAAAAAAADz/wcABAAAAAAAAADx/wMABAAAAAAAAAD8/wkABAAAAAAAAAAEAAkABAAAAAAAAAAAAPn/BQAAAAAAAAAAAPr/BQAAAAAAAAAAAPv/BQAAAAAAAAAAAPz/BQAAAAAAAAAAAP3/BQAAAAAAAAABAP3/BQAAAAAAAAACAP3/BQAAAAAAAAACAP7/BQAAAAAAAAACAP//BQAAAAAAAAAAAPj/BQAAAAAAAAAIAPj/BQAAAAAAAAAIAPn/BQAAAAAAAAAIAPr/BQAAAAAAAAAIAPv/BQAAAAAAAAAIAPz/BQAAAAAAAAAHAPz/BQAAAAAAAAAHAP3/BQAAAAAAAAAGAP3/BQAAAAAAAAAGAP7/BQAAAAAAAAAGAP//BQAAAAAAAAAGAAAABQAAAAAAAAAGAAEABQAAAAAAAAACAAAABQAAAAAAAAACAAEABQAAAAAAAAACAAIABQAAAAAAAAACAAMABQAAAAAAAAACAAQABQAAAAAAAAAOAAEABQAAAAQAAAANAAEABQAAAAQAAAAKAP3/BQAAAAQAAAD6//v/BQAAAAQAAAD///n/BQAAAAQAAAD+//r/BQAAAAQAAAAZAAYABQAAAAQAAAAaAAYABQAAAAQAAAAQAP7/BQAAAAQAAAASAAAABQAAAAQAAAAXABUABAAAAAAAAAAaABUABAAAAAAAAAAgABsABAAAAAAAAAAWAAgABAAAAAAAAAAXAAgABAAAAAAAAAAMAPn/BQAAAAAAAAAMAPz/BQAAAAAAAAATAPz/BQAAAAAAAAARAPj/BQAAAAAAAAD8//r/BQAAAAAAAAD5//n/BQAAAAAAAAAWAAcABQAAAAQAAAAOAPj/BQAAAAQAAAAIAAAABQAAAAQAAAABAAEABQAAAAQAAAAGAAUABQAAAAQAAAAbAAkABQAAAAQAAAAjAAkABQAAAAQAAAA=")
 tile_set = SubResource("TileSet_e5qq5")
+
+[node name="Barraca" type="Area2D" parent="."]
+script = ExtResource("15_dnus7")
+
+[node name="Tent" type="Sprite2D" parent="Barraca"]
+position = Vector2(128, -94)
+texture = ExtResource("15_02khv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barraca"]
+position = Vector2(128, -94)
+shape = SubResource("RectangleShape2D_5b1ci")
