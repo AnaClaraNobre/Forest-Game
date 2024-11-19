@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bn6af735cmohj" path="res://tent/Tent.png" id="15_02khv"]
 [ext_resource type="Script" path="res://terrain/barraca.gd" id="15_dnus7"]
 [ext_resource type="PackedScene" uid="uid://o324fy3lgtx" path="res://characters/npcs/male1.tscn" id="17_lbd4i"]
-[ext_resource type="Script" path="res://terrain/pathMale1.gd" id="18_4dyhw"]
+[ext_resource type="Script" path="res://terrain/path_follow_2d.gd" id="18_4dyhw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vk5u5"]
 resource_name = "ground"
@@ -2973,9 +2973,9 @@ size = Vector2(34, 26)
 
 [sub_resource type="Curve2D" id="Curve2D_6nkpn"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 70, -201, 0, 0, 0, 0, 81, 24, 0, 0, 0, 0, 70, 44, 0, 0, 0, 0, 96, 58, 0, 0, 0, 0, 261, 54, 0, 0, 0, 0, 294, 62, 0, 0, 0, 0, 320, 81, 0, 0, 0, 0, 384, 52, 0, 0, 0, 0, 545, 58, 0, 0, 0, 0, 621, 70, 0, 0, 0, 0, 658, 47, 0, 0, 0, 0, 634, -8, 0, 0, 0, 0, 675, -48, 0, 0, 0, 0, 742, -48, 0, 0, 0, 0, 763, -32, 0, 0, 0, 0, 815, -34, 0, 0, 0, 0, 812, -84, 0, 0, 0, 0, 794, -158, 0, 0, 0, 0, 801, -202)
+"points": PackedVector2Array(0, 0, 0, 0, 68, -184, 0, 0, 0, 0, 72, 55, 0, 0, 0, 0, 643, 55, 0, 0, 0, 0, 644, -37, 0, 0, 0, 0, 782, -37, 0, 0, 0, 0, 798, -54, 0, 0, 0, 0, 797, -203, 0, 0, 0, 0, 795, -287)
 }
-point_count = 19
+point_count = 8
 
 [node name="first_level" type="Node2D"]
 position = Vector2(273, 208)
@@ -3015,8 +3015,9 @@ shape = SubResource("RectangleShape2D_5b1ci")
 curve = SubResource("Curve2D_6nkpn")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(70, -201)
+position = Vector2(276.727, 55)
 rotation = 1.55406
+progress = 443.762
 rotates = false
 script = ExtResource("18_4dyhw")
 
