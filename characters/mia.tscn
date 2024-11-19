@@ -288,7 +288,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_vx63j")
 }],
 "loop": true,
-"name": &"up_wlak",
+"name": &"up_walk",
 "speed": 5.0
 }, {
 "frames": [{
@@ -326,7 +326,7 @@ pick_up_name = "pick_up"
 [node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_grjxe")
-animation = &"pick_up"
+animation = &"up_walk"
 autoplay = "Down_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
