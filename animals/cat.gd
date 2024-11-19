@@ -4,7 +4,7 @@ class_name cat
 var direction: Vector2
 var wait_time: float
 @export_category("Variables")
-@export var _move_speed: float = 80.0
+@export var _move_speed: float = 50.0
 @export_category("Objects")
 @export var sprit2d = AnimatedSprite2D
 @onready var animation := $anim as AnimatedSprite2D
@@ -25,6 +25,10 @@ func _physics_process(delta: float) -> void:
 	
 	
 func _animate(_velocity : Vector2) -> void:
+	if velocity == Vector2.ZERO:
+		animation.play("idle")
+		return
+		
 	if velocity.x > 0 and velocity.y == 0:
 		sprit2d.flip_h = true  
 		animation.play("walking_right")
@@ -33,14 +37,26 @@ func _animate(_velocity : Vector2) -> void:
 		sprit2d.flip_h = false  
 		animation.play("walking_left")
 
-	if velocity.y > 0 and velocity.x == 0:
+	elif velocity.y > 0 and velocity.x == 0:
 		animation.play("walking_down")
 		
-	if velocity.y < 0 and velocity.x == 0:
+	elif velocity.y < 0 and velocity.x == 0:
 		animation.play("walking_up")
-
-	if velocity == Vector2.ZERO:
-		animation.play("idle")
+		
+	elif _velocity.x > 0 and _velocity.y > 0:  # Diagonal inferior direita
+		sprit2d.flip_h = true
+		animation.play("diag_down_rigth")
+		
+	elif _velocity.x < 0 and _velocity.y > 0:
+		sprit2d.flip_h = false
+		animation.play("diag_down_left")
+	elif _velocity.x > 0 and _velocity.y < 0:
+		sprit2d.flip_h = true
+		animation.play("diag_up_rigth")
+	elif _velocity.x < 0 and _velocity.y < 0:
+		sprit2d.flip_h = false
+		animation.play("diag_up_left")
+		
 func _get_direction() -> Vector2:
 	return [
 		Vector2(-1,0), Vector2(1,0), Vector2(-1,-1), Vector2(0,-1),
