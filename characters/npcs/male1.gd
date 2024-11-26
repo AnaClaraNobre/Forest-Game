@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var path_follow_node: NodePath
 
 # Velocidade do NPC
-@export var speed: float = 200
+@export var speed: float = 1000  # Ajuste para aumentar a velocidade
 
 # Referência ao AnimatedSprite2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -34,12 +34,12 @@ func _ready():
 # Função chamada a cada quadro (processamento normal)
 func _process(delta: float):
 	if path_follow:
-		# Incrementa o progresso com base no delta (tempo entre quadros)
+		# Atualiza o progresso ao longo do caminho com base no tempo (delta)
 		path_follow.progress += speed * delta / path_length
 		if path_follow.progress > 1.0:
-			path_follow.progress = 1.0  # Garante que não ultrapasse o limite
+			path_follow.progress = 1.0  # Garante que não ultrapasse o limite do caminho
 
-		# Atualiza a posição do NPC para seguir o PathFollow2D
+		# Atualiza a posição global do NPC para seguir o PathFollow2D
 		global_position = path_follow.global_position
 
 		# Atualiza a animação com base na direção
@@ -48,6 +48,9 @@ func _process(delta: float):
 		# Verifica se chegou ao final do caminho
 		if path_follow.progress >= 1.0:
 			stop_movement()
+		print("Progresso do caminho:", path_follow.progress)
+		print("Posição global do NPC:", global_position)
+
 
 # Função para atualizar animações
 func update_animation():
@@ -70,5 +73,4 @@ func update_animation():
 # Função para parar o movimento e mudar para a animação idle
 func stop_movement():
 	# Para o NPC e muda a animação para idle
-	animated_sprite.play("idle")
 	print("NPC chegou ao fim do caminho!")

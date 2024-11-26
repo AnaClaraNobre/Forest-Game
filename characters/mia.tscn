@@ -322,17 +322,17 @@ sprit2d = NodePath("anim")
 pick_up_name = "pick_up"
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_grjxe")
-animation = &"pick_up"
+animation = &"walk_down"
 autoplay = "Down_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_gprle")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.8, 1.8)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
