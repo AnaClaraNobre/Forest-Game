@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://0yhuaohs51co"]
+[gd_scene load_steps=7 format=3 uid="uid://t5lg6chh1jb0"]
 
-[ext_resource type="Texture2D" uid="uid://xdvqhl6ht4v" path="res://game_over.png" id="1_brc41"]
-[ext_resource type="Script" path="res://game_over.gd" id="1_v6qpe"]
+[ext_resource type="Script" path="res://game_over.gd" id="1_su4ol"]
+[ext_resource type="Texture2D" uid="uid://ddtgani8r67io" path="res://2374896.png" id="2_7c5pg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n7wu2"]
 
@@ -65,14 +65,14 @@ _data = {
 "fade_in": SubResource("Animation_2h74w")
 }
 
-[node name="Game_Over" type="Control"]
+[node name="next_level_screen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_v6qpe")
+script = ExtResource("1_su4ol")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -81,7 +81,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0212624, 0.0187501, 0.0405681, 1)
+color = Color(0.129412, 0.466667, 0.243137, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -99,7 +99,7 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_brc41")
+texture = ExtResource("2_7c5pg")
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
@@ -107,7 +107,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_n7wu2")
 
 [node name="reset_btn" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Restart"
+text = "Next Level"
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
