@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=4 uid="uid://ba1o5qwdr0vm6"]
+[gd_scene load_steps=17 format=4 uid="uid://ba1o5qwdr0vm6"]
 
-[ext_resource type="Script" path="res://management/game_level.gd" id="1_d3jft"]
+[ext_resource type="Script" path="res://management/game_level_2.gd" id="1_bc2xs"]
 [ext_resource type="PackedScene" uid="uid://bm7sjhb6iqdg0" path="res://terrain/hud.tscn" id="2_8h2tu"]
 [ext_resource type="Script" path="res://score.gd" id="3_vdk8y"]
 [ext_resource type="PackedScene" uid="uid://bis71orh2v06e" path="res://terrain/first_level.tscn" id="4_wkkc1"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cjuds1gkdkqm7" path="res://characters/mia.tscn" id="7_40jvj"]
 [ext_resource type="PackedScene" uid="uid://bfc4y8x3dhd42" path="res://animals/cat.tscn" id="8_x8oua"]
 [ext_resource type="PackedScene" uid="uid://30jaxbvlvmaj" path="res://animals/frog.tscn" id="9_kv8ab"]
+[ext_resource type="PackedScene" uid="uid://cu21ded330pm0" path="res://animals/dog.tscn" id="9_pq1eh"]
 [ext_resource type="Texture2D" uid="uid://ilq6cw2vhsqx" path="res://terrain/PixiVan Forest (Beta)/Trees.png" id="10_vriru"]
 [ext_resource type="Texture2D" uid="uid://btd2wrktfcjx5" path="res://terrain/Forest BETA V3/Trees.png" id="11_6m34r"]
 [ext_resource type="AudioStream" uid="uid://ffxsgvdm0504" path="res://sounds/bg_music.wav.ogg" id="12_i1wah"]
@@ -904,9 +905,7 @@ sources/5 = SubResource("TileSetAtlasSource_jns80")
 sources/6 = SubResource("TileSetAtlasSource_xe4wp")
 
 [node name="gameLevel2" type="Node2D"]
-script = ExtResource("1_d3jft")
-redclr = Color(0.605674, 1.31156e-06, 2.88785e-07, 1)
-origClr = Color(0.843137, 0.6, 0.117647, 1)
+script = ExtResource("1_bc2xs")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -951,6 +950,9 @@ position = Vector2(66, -125)
 
 [node name="cat" parent="first_level" instance=ExtResource("8_x8oua")]
 position = Vector2(46, -76)
+
+[node name="dog" parent="." instance=ExtResource("9_pq1eh")]
+position = Vector2(73, 140)
 
 [node name="frog" parent="." instance=ExtResource("9_kv8ab")]
 position = Vector2(657, 426)
