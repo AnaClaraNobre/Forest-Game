@@ -116,7 +116,7 @@ position = Vector2(13, 8)
 script = ExtResource("1_4bayy")
 metadata/_edit_group_ = true
 
-[node name="Animation" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(-12.5, -7)
 scale = Vector2(0.902344, 0.975695)
 sprite_frames = SubResource("SpriteFrames_g85kk")
