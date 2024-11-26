@@ -15,6 +15,5 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Mia) -> void: 	
 	if body.hasGarb:
 		body.garbage_count += 1
-		body.move_speed = max(0, body.move_speed - body.speed_reduction_per_garbage)
-		
+		body.move_speed = max(0, body.move_speed - body.speed_reduction_per_garbage) 
 		queue_free()
