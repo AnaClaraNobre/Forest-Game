@@ -25,11 +25,7 @@ var _pick_Up_animation_name: String = ""
 @export var pick_up_name: String = ""
 
 func _ready() -> void:
-	score = 0
-	if hud == null:
-		print("HUD não encontrado! Verifique o caminho.")
-	else:
-		print("HUD encontrado: ", hud)
+	score = 0	
 
 func _process(delta: float) -> void:
 	pass
@@ -94,4 +90,5 @@ func _input(event):
 	if event.is_action_pressed("pick_up"):            
 		hasGarb = true        
 	if event.is_action_released("pick_up"):        
-		hasGarb = false            
+		hasGarb = false        
+			

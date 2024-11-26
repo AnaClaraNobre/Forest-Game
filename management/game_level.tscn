@@ -904,8 +904,6 @@ sources/6 = SubResource("TileSetAtlasSource_xe4wp")
 
 [node name="gameLevel" type="Node2D"]
 script = ExtResource("1_bxc2x")
-redclr = Color(0.605674, 1.31156e-06, 2.88785e-07, 1)
-origClr = Color(0.843137, 0.6, 0.117647, 1)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -956,7 +954,7 @@ tile_map_data = PackedByteArray("AAAcAAIABgAMABAAAAAcAAMABgAMABEAAAAcAAQABgAMABI
 tile_set = SubResource("TileSet_dvk2s")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 120.0
+wait_time = 5.0
 
 [node name="Label" type="Label" parent="."]
 offset_left = 670.0

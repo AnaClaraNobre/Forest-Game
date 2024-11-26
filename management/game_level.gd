@@ -1,12 +1,13 @@
 extends Node2D
 
 var label = Label 
-var time = Timer
+@export var time = Timer
 @export var redclr : Color
 @export var origClr : Color
 @export var origClrbg : Color = Color(1, 1, 1, 1)
 @onready var game_level: Node2D = $"."
 @onready var player_light = $first_level/Mia/PointLight2D
+@onready var hud = get_node("./UI/HUD")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	label = $Label
@@ -14,6 +15,7 @@ func _ready():
 	time.start()
 	OriginClrRet()
 	player_light.visible = false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	update_label_text()
@@ -30,6 +32,9 @@ func _process(delta: float) -> void:
 		player_light.visible = true
 	else:
 		player_light.visible = false
+		
+	if time.time_left <= 0.1 && int(hud.score.text) != 5:		
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	
 func OriginClrRet():
 	label.modulate = origClr
