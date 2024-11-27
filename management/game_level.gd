@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 	if time.time_left <= 0.1 && int(hud.score.text) != 5:		
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	
-	if int(hud.score.text) == 2:
+	if int(hud.score.text) == 3:
 		get_tree().change_scene_to_file("res://nextLevel.tscn")
 	
 	

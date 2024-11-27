@@ -962,7 +962,7 @@ tile_map_data = PackedByteArray("AAAcAAIABgAMABAAAAAcAAMABgAMABEAAAAcAAQABgAMABI
 tile_set = SubResource("TileSet_dvk2s")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 15.0
 
 [node name="Label" type="Label" parent="."]
 offset_left = 670.0

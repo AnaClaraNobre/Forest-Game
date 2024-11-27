@@ -336,6 +336,8 @@ shape = SubResource("CapsuleShape2D_gprle")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+rotation = -0.000346751
+zoom = Vector2(2, 2)
 
 [node name="pick_up_effect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_eeny8")
