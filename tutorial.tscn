@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgok0ewgshuoh"]
+
+[ext_resource type="Script" path="res://tutorial.gd" id="1_10e1a"]
+[ext_resource type="Texture2D" uid="uid://bp4myreunim3d" path="res://bg_imgs/PNG/tutorial/background.png" id="2_r64le"]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_10e1a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.359069, 0.359069, 0.359069, 1)
+position = Vector2(641.5, 384)
+scale = Vector2(1.4033, 1.4749)
+texture = ExtResource("2_r64le")
+
+[node name="tutorial" type="RichTextLabel" parent="."]
+offset_left = 25.0
+offset_top = 209.0
+offset_right = 528.0
+offset_bottom = 422.0
+tab_size = 20
+
+[node name="Avancar" type="RichTextLabel" parent="."]
+offset_left = 34.0
+offset_top = 510.0
+offset_right = 537.0
+offset_bottom = 566.0
+text = "Pressione enter para passar..."

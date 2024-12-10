@@ -31,9 +31,6 @@ func _process(delta):
 
 	var next_pos = global_position
 	var current_pos = character.global_position
-	print(next_pos,"proximo")
-	print(current_pos,"passado")
-	print(next_pos - current_pos,"result")
 	direction = (next_pos - current_pos).normalized()
 
 	character.velocity = direction * speed 
@@ -43,7 +40,6 @@ func _process(delta):
 	_update_animation()
 
 func _update_animation():
-	print(direction.x)
 	if direction.x != 0:
 		animated_sprite.play("walk_side")
 		if direction.x > 0:

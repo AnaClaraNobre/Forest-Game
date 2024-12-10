@@ -20,4 +20,4 @@ func _on_pressed() -> void:
 	$btn_start.modulate.r =0.3
 	$btn_start.modulate.g =0.3
 	$btn_start.modulate.b =0.3
-	get_tree().change_scene_to_file("res://management/game_level.tscn")
+	get_tree().change_scene_to_file("res://tutorial.tscn")
