@@ -45,12 +45,12 @@ func _process(delta: float) -> void:
 	if int(hud.score.text) == 7:
 		get_tree().change_scene_to_file("res://nextLevel.tscn")
 	
-	if time.time_left <= 20:
+	if time.time_left <= 15:
 		dog.move_to_position(Vector2(392, 72))
 	
 		last_subtraction_time += delta;
 		
-		if last_subtraction_time >= 10:
+		if last_subtraction_time >= 5:
 			if int(hud.score.text) > 0:
 				hud.score.text = str(int(hud.score.text) - 1)				
 					

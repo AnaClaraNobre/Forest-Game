@@ -960,7 +960,7 @@ tile_map_data = PackedByteArray("AAAcAAIABgAMABAAAAAcAAMABgAMABEAAAAcAAQABgAMABI
 tile_set = SubResource("TileSet_dvk2s")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 35.0
+wait_time = 45.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_i1wah")
